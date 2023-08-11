@@ -36,7 +36,6 @@ class DecoderRNN(nn.Module):
         self.hidden = self.init_hidden(self.batch_size)
         
     def init_hidden(self, batch_size):
-        # The axes dimensions are (num_layers, batch_size, hidden_size). batch_size explicitly made = 1
         return (torch.zeros(self.num_layers, self.batch_size, self.hidden_size).cuda(),
                 torch.zeros(self.num_layers, self.batch_size, self.hidden_size).cuda())
     
